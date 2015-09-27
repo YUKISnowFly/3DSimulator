@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<catalog>
+  <cata id="a001">
+    <tag>Arms</tag>
+    <name>Assault Rifle</name>
+    <speed>3.0</speed>
+    <damage>3.0</damage>
+    <range>30</range>
+    <knock_back>10.0</knock_back>
+    <bullet>20</bullet>
+    <cool_time>200</cool_time>
+    <reload>5000</reload>
+    <bullet_color>Blue</bullet_color>
+    <rapid>0</rapid>
+  </cata>
+  <cata id="a002">
+    <tag>Arms</tag>
+    <name>Sniper Rifle</name>
+    <speed>10.0</speed>
+    <damage>10</damage>
+    <range>200.0</range>
+    <knock_back>100.0</knock_back>
+    <bullet>1</bullet>
+    <cool_time>0</cool_time>
+    <reload>20000</reload>
+    <bullet_color>Yellow</bullet_color>
+    <rapid>0</rapid>
+  </cata>
+  <cata id="a003">
+    <tag>Arms</tag>
+    <name>Sub Machinegun</name>
+    <speed>1.0</speed>
+    <damage>1</damage>
+    <range>10.0</range>
+    <knock_back>0.0</knock_back>
+    <bullet>200</bullet>
+    <cool_time>50</cool_time>
+    <reload>10000</reload>
+    <bullet_color>Red</bullet_color>
+    <rapid>1</rapid>
+  </cata>
+</catalog>
