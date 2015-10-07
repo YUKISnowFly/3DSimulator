@@ -563,24 +563,6 @@ Game::Game():finished(false)
 	hr = D3DXCreateTextureFromFile(gDXDev,WallTEXFILE,&gWallTex);
 	ASSERT(SUCCEEDED(hr) && "ステージテクスチャロード失敗");
 
-	hr = D3DXCreateTextureFromFile(gDXDev,Blue_headTEXFILE,&gBlue_headTex);
-	ASSERT(SUCCEEDED(hr) && "ロボテクスチャロード失敗");
-	hr = D3DXCreateTextureFromFile(gDXDev,Blue_armsTEXFILE,&gBlue_armsTex);
-	ASSERT(SUCCEEDED(hr) && "ロボテクスチャロード失敗");
-	hr = D3DXCreateTextureFromFile(gDXDev,Blue_bodyTEXFILE,&gBlue_bodyTex);
-	ASSERT(SUCCEEDED(hr) && "ロボテクスチャロード失敗");
-	hr = D3DXCreateTextureFromFile(gDXDev,Blue_regsTEXFILE,&gBlue_regsTex);
-	ASSERT(SUCCEEDED(hr) && "ロボテクスチャロード失敗");
-
-	hr = D3DXCreateTextureFromFile(gDXDev,Red_headTEXFILE,&gRed_headTex);
-	ASSERT(SUCCEEDED(hr) && "ロボテクスチャロード失敗");
-	hr = D3DXCreateTextureFromFile(gDXDev,Red_armsTEXFILE,&gRed_armsTex);
-	ASSERT(SUCCEEDED(hr) && "ロボテクスチャロード失敗");
-	hr = D3DXCreateTextureFromFile(gDXDev,Red_bodyTEXFILE,&gRed_bodyTex);
-	ASSERT(SUCCEEDED(hr) && "ロボテクスチャロード失敗");
-	hr = D3DXCreateTextureFromFile(gDXDev,Red_regsTEXFILE,&gRed_regsTex);
-	ASSERT(SUCCEEDED(hr) && "ロボテクスチャロード失敗");
-
 	hr = D3DXCreateTextureFromFile(gDXDev,BlueTEXFILE,&gBlueTex);
 	ASSERT(SUCCEEDED(hr) && "青テクスチャロード失敗");
 	hr = D3DXCreateTextureFromFile(gDXDev,YellowTEXFILE,&gYellowTex);
@@ -591,12 +573,6 @@ Game::Game():finished(false)
 	ASSERT(SUCCEEDED(hr) && "緑テクスチャロード失敗");
 	hr = D3DXCreateTextureFromFile(gDXDev,WhiteTEXFILE,&gWhiteTex);
 	ASSERT(SUCCEEDED(hr) && "白テクスチャロード失敗");
-
-	
-	hr = D3DXCreateTextureFromFile(gDXDev,Blue_arms2TEXFILE,&gBlue_arms2Tex);
-	ASSERT(SUCCEEDED(hr) && "ロボテクスチャロード失敗");
-	hr = D3DXCreateTextureFromFile(gDXDev,Blue_arms3TEXFILE,&gBlue_arms3Tex);
-	ASSERT(SUCCEEDED(hr) && "ロボテクスチャロード失敗");
 
 	//頂点バッファ生成
 	hr = gDXDev->CreateVertexBuffer(
@@ -746,34 +722,13 @@ void Game::drawDX(void)
 		gDXDev->SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
 		//ステージ描画
 		drawObj(gStage);
-		for (int i = 1; i <= WallMax; i++)
-		{
-			drawObj(gWall[i]);
-		}
+		
 		for (int i = 0; i < cubeMax; i++)
 		{
 			if (cube[i]->fDraw) drawObj(cube[i]);
 		}
 		drawObj(laser);
 		drawObj(cylinder);
-		//ロボ描画
-		if (pR->fDraw)
-		{
-			drawObj(gBlue_head);
-			drawObj(gBlue_arms);
-			drawObj(gBlue_body);
-			drawObj(gBlue_regs);
-		}
-		for (int i = 0; i < RoboMax - 1; i++)
-		{
-			if (cpuR[i]->fDraw)
-			{
-				drawObj(gCpuHead[i]);
-				drawObj(gCpuArms[i]);
-				drawObj(gCpuBody[i]);
-				drawObj(gCpuRegs[i]);
-			}
-		}
 
 		//弾描画
 		for(int i = 0; i < BulletMax; i++)
@@ -781,12 +736,9 @@ void Game::drawDX(void)
 			if (gBullet[i]->fDraw) drawObj(gBullet[i]);
 		}
 
+		//2D描画
 		gDXDev->SetRenderState(D3DRS_ZENABLE,FALSE);
-		for(int i = 0; i < RoboMax; i++)
-		{
-			if (gLifeGauge[i]->fDraw) drawObj(gLifeGauge[i]);
-		}
-		if (gBulletGauge->fDraw) drawObj(gBulletGauge);
+		//if (gBulletGauge->fDraw) drawObj(gBulletGauge);
 		gDXDev->SetRenderState(D3DRS_ZENABLE,TRUE);
 
 		gDXDev->EndScene();

@@ -11,18 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Arms.h" />
-    <ClInclude Include="Bullet.h" />
-    <ClInclude Include="DateInit.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="GetPointClouds.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="MyMath.h" />
     <ClInclude Include="Obj.h" />
     <ClInclude Include="Pad.h" />
     <ClInclude Include="readXml.h" />
-    <ClInclude Include="Robo.h" />
-    <ClInclude Include="Stage.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
@@ -30,34 +24,25 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Blue_arms.bmp" />
-    <None Include="Blue_arms.x" />
-    <None Include="Blue_body.bmp" />
-    <None Include="Blue_body.x" />
-    <None Include="Blue_head.bmp" />
-    <None Include="Blue_head.x" />
-    <None Include="Blue_regs.bmp" />
-    <None Include="Blue_regs.x" />
-    <None Include="Arms.xml">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Bullet.bmp" />
     <None Include="Bullet.x" />
     <None Include="Cube.x" />
     <None Include="Cylinder.x" />
     <None Include="g.bmp" />
     <None Include="Green.bmp" />
-    <None Include="Gauge.x" />
-    <None Include="Result.xlsx" />
     <None Include="Stage.x" />
-    <None Include="StagePath.xml" />
     <None Include="stagex2.txt" />
     <None Include="wall.bmp" />
-    <None Include="wall.x" />
     <None Include="Stage.xml">
       <SubType>Designer</SubType>
     </None>
     <None Include="White.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Result.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Blue.bmp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BCAFC2F2-4AAA-4C0A-AD3C-981EB73BCDB6}</ProjectGuid>
