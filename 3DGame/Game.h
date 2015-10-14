@@ -386,12 +386,20 @@ public:
 		{
 			sprintf(c, "started\n");
 			OutputDebugString(c);
-			fp = fopen("Result.txt", "w");
+			char* str = ("Result.txt");
+			fp = fopen(str, "w");
 			for (int i = 0; i < laserNum; i++)
 			{
 				pointLaser(i);
 			}
 			fclose(fp);
+
+			for (int i = 2; i < cubeNum; i++)
+			{
+				cube[i]->randMove();
+				objUpdate(cube[i]);
+			}
+
 			sprintf(c, "finished\n");
 			OutputDebugString(c);
 		}
